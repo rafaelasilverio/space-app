@@ -31,13 +31,13 @@ const IconeLupa = styled.img`
 
 
 
-const CampoTexto = (props) => {
-    return(
+const CampoTexto = ({ setFiltro }) => {
+    return (
         <ContainerEstilizado>
-            <CampoTextoEstilizado placeholder="O que você procura?" {...props}/>
+            <CampoTextoEstilizado onChange={(evento) => { setFiltro(evento.target.value) }} type="text" placeholder="O que você procura?"/>
             <IconeLupa src={search} alt="ícone de lupa" />
         </ContainerEstilizado>
-    );
+    )
 }
 
-export default CampoTexto;
+export default CampoTexto
